@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>OpenWrt Bandwidth Dashboard</title>
+<style>
+:root{color-scheme:light dark;--bg:#0f172a;--panel:#111827;--card:#182235;--text:#f8fafc;--muted:#a8b3c7;--accent:#5b7cfa;--line:#2a3853}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:linear-gradient(180deg,#0b1220,#111827);color:var(--text);line-height:1.5}
+.wrap{max-width:1080px;margin:auto;padding:48px 24px 72px}.hero{padding:44px;border:1px solid var(--line);background:rgba(24,34,53,.8);border-radius:22px}
+h1{font-size:clamp(2.1rem,5vw,4rem);line-height:1.05;margin:0 0 16px}.sub{font-size:1.15rem;color:var(--muted);max-width:760px}.badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#22345f;color:#dbe7ff;font-weight:700;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:28px}.card{background:rgba(24,34,53,.82);border:1px solid var(--line);border-radius:16px;padding:20px}.card h3{margin-top:0}.section{margin-top:42px}.section h2{font-size:1.7rem}.muted{color:var(--muted)}
+code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}.code{background:#09111f;border:1px solid var(--line);padding:18px;border-radius:12px;overflow:auto}
+.footer{margin-top:48px;color:var(--muted);font-size:.95rem}
+a{color:#9db2ff}.pill{display:inline-block;margin-right:8px;margin-top:8px;padding:7px 10px;background:#152440;border:1px solid #32486f;border-radius:999px}
+</style>
+</head>
+<body>
+<main class="wrap">
+<section class="hero">
+<div class="badge">OpenWrt • Version 2.1.88</div>
+<h1>OpenWrt Bandwidth Dashboard</h1>
+<p class="sub">A lightweight dashboard for bandwidth monitoring, DNS history, alerts, backups, WireGuard, and Smart Home usage on OpenWrt.</p>
+<div>
+<span class="pill">Per-device usage</span><span class="pill">DNS history</span><span class="pill">Email alerts</span><span class="pill">Smart Home</span><span class="pill">Backups</span>
+</div>
+</section>
+
+<section class="section">
+<h2>Features</h2>
+<div class="grid">
+<div class="card"><h3>Bandwidth</h3><p class="muted">Track per-device usage, usage history, live bandwidth, groups, and dashboard cards.</p></div>
+<div class="card"><h3>DNS Monitoring</h3><p class="muted">Monitor domains, optionally capture external plain DNS, retain history on storage, and search across saved days.</p></div>
+<div class="card"><h3>Alerts</h3><p class="muted">Receive email alerts for domain activity, thresholds, Smart Home events, and minimum usage by time.</p></div>
+<div class="card"><h3>Smart Home</h3><p class="muted">Water, electricity, temperature, and humidity monitoring with comparisons and history.</p></div>
+<div class="card"><h3>Backup & Restore</h3><p class="muted">Automatic backups, full restores, flash-drive browsing, and downloadable saved backups.</p></div>
+<div class="card"><h3>Router Monitoring</h3><p class="muted">CPU/process information, WireGuard peer statistics, and device management.</p></div>
+</div>
+</section>
+
+<section class="section">
+<h2>DNS history search</h2>
+<p class="muted">Persistent DNS logging can store recent DNS records on the storage selected during setup instead of RAM. Searches can span all retained history, highlight matching dates on a calendar, filter to a specific day, or show all results in a continuously scrolling list.</p>
+</section>
+
+<section class="section">
+<h2>Minimum Usage by Time</h2>
+<p class="muted">Set a device, Upload or Download, MB or GB, an amount, and a deadline. If the device has not reached that amount by the selected time, the dashboard sends an email alert.</p>
+</section>
+
+<section class="section">
+<h2>Install</h2>
+<div class="code"><pre>cd /tmp
+unzip openwrt-bandwidth-dashboard-install-2.1.88.zip
+cd openwrt-bandwidth-dashboard-install-2.1.88
+chmod +x install.sh
+./install.sh</pre></div>
+</section>
+
+<p class="footer">Official repository maintained by warwagon1979. Public visitors can view or fork the project, but only users with write access can directly modify this repository.</p>
+</main>
+</body>
+</html>
